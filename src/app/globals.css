@@ -111,3 +111,45 @@ html.dark .bg-bg {
   background-size: 100vw 100vh;
   background-position: top left;
 }
+
+/* Engineering / Skillset section background */
+.engineering-gradient {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(191, 219, 254, 0.75),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(221, 214, 254, 0.7),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #eef4ff 45%,
+      #f5f1ff 100%
+    );
+}
+
+/* Dark mode */
+html.dark .engineering-gradient {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(59, 130, 246, 0.13),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(139, 92, 246, 0.12),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #111827 0%,
+      #151827 50%,
+      #191526 100%
+    );
+}

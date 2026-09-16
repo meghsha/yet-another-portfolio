@@ -125,46 +125,48 @@ export function HomePage() {
           </div>
         </FadeIn>
       </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <FadeIn>
-          <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight">
-            Some of the arrows in my bow -
-          </h2>
-        </FadeIn>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
-          <BentoCard
-            title={bento.backend.title}
-            items={bento.backend.items}
-            className="sm:col-span-2 lg:col-span-3 min-h-[130px]"
-          />
-          <BentoCard
-            title={bento.frontend.title}
-            items={bento.frontend.items}
-            className="sm:col-span-2 lg:col-span-3 min-h-[130px]"
-          />
-          <BentoCard
-            title={bento.databases.title}
-            items={bento.databases.items}
-            className="lg:col-span-2"
-          />
-          <BentoCard
-            title={bento.cloud.title}
-            items={bento.cloud.items}
-            className="lg:col-span-2"
-          />
-          <BentoCard
-            title={bento.system.title}
-            items={bento.system.items}
-            className="lg:col-span-2"
-          />
-          <BentoCard
-            title={bento.dsa.title}
-            items={bento.dsa.items}
-            className="lg:col-span-6"
-          />
-        </div>
-      </section>
+      
+      <div className="engineering-gradient">
+        <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+          <FadeIn>
+            <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight">
+              Some of the arrows in my bow -
+            </h2>
+          </FadeIn>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+            <BentoCard
+              title={bento.backend.title}
+              items={bento.backend.items}
+              className="sm:col-span-2 lg:col-span-3 min-h-[130px]"
+            />
+            <BentoCard
+              title={bento.frontend.title}
+              items={bento.frontend.items}
+              className="sm:col-span-2 lg:col-span-3 min-h-[130px]"
+            />
+            <BentoCard
+              title={bento.databases.title}
+              items={bento.databases.items}
+              className="lg:col-span-2"
+            />
+            <BentoCard
+              title={bento.cloud.title}
+              items={bento.cloud.items}
+              className="lg:col-span-2"
+            />
+            <BentoCard
+              title={bento.system.title}
+              items={bento.system.items}
+              className="lg:col-span-2"
+            />
+            <BentoCard
+              title={bento.dsa.title}
+              items={bento.dsa.items}
+              className="lg:col-span-6"
+            />
+          </div>
+        </section>
+      </div>
 
       <section id="work" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <FadeIn>
@@ -291,74 +293,75 @@ export function HomePage() {
         </div>
       </section>
 
-      <section
-        id="engineering"
-        className="mx-auto max-w-6xl px-5 py-16 sm:px-8"
-      >
-        <FadeIn>
-          <SectionLabel>Backend engineering</SectionLabel>
-          <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
-            The work behind the screens.
-          </h2>
-        </FadeIn>
-        <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-          {backendCapabilities.map((cap) => (
-            <article key={cap.title} className="surface rounded-[24px] p-5">
-              <h3 className="text-base font-medium">{cap.title}</h3>
-              <ul className="mt-3 space-y-2 text-sm text-ink-soft">
-                {cap.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <p className="mt-4 text-[11px] uppercase tracking-[0.14em] text-ink-soft">
-                {cap.project}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
+      <div className="engineering-gradient">
+        <section
+          id="engineering"
+          className="mx-auto max-w-6xl px-5 py-16 sm:px-8"
+        >
+          <FadeIn>
+            <SectionLabel>Backend engineering</SectionLabel>
+            <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
+              The work behind the screens.
+            </h2>
+          </FadeIn>
+          <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {backendCapabilities.map((cap) => (
+              <article key={cap.title} className="surface rounded-[24px] p-5">
+                <h3 className="text-base font-medium">{cap.title}</h3>
+                <ul className="mt-3 space-y-2 text-sm text-ink-soft">
+                  {cap.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <p className="mt-4 text-[11px] uppercase tracking-[0.14em] text-ink-soft">
+                  {cap.project}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <FadeIn>
-          <SectionLabel>Frontend engineering</SectionLabel>
-          <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
-            Interfaces as clients of real systems.
-          </h2>
-        </FadeIn>
-        <div className="mt-8 grid gap-3 md:grid-cols-3">
-          {[
-            {
-              t: "Frontend Architecture",
-              d: "Architect scalable frontend applications with modular component structures, well-defined API boundaries, and micro-frontend patterns."
-            },
-            {
-              t: "Application architecture",
-              d: "React, Next.js, Svelte, and TypeScript for checkout, payments, dashboards, and product apps — consuming APIs, not decorating them.",
-            },
-            {
-              t: "State & rendering",
-              d: "Redux Toolkit, Context, SSR on Next.js for SEO, and Svelte surfaces on high-traffic commerce paths.",
-            },
-            {
-              t: "UI Systems & Experience",
-              d: "Build responsive, reusable product interfaces with complex interaction flows and thoughtful loading, error, and empty states."
-            },
-            {
-              t: "Performance",
-              d: "Lazy loading, memoization, caching, and compressed static resources on checkout — conversion as an engineering problem.",
-            },
-          ].map((c) => (
-            <article key={c.t} className="surface rounded-[24px] p-5">
-              <h3 className="text-base font-medium">{c.t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                {c.d}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+          <FadeIn>
+            <SectionLabel>Frontend engineering</SectionLabel>
+            <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
+              Interfaces as clients of real systems.
+            </h2>
+          </FadeIn>
+          <div className="mt-8 grid gap-3 md:grid-cols-3">
+            {[
+              {
+                t: "Frontend Architecture",
+                d: "Architect scalable frontend applications with modular component structures, well-defined API boundaries, and micro-frontend patterns."
+              },
+              {
+                t: "Application architecture",
+                d: "React, Next.js, Svelte, and TypeScript for checkout, payments, dashboards, and product apps — consuming APIs, not decorating them.",
+              },
+              {
+                t: "State & rendering",
+                d: "Redux Toolkit, Context, SSR on Next.js for SEO, and Svelte surfaces on high-traffic commerce paths.",
+              },
+              {
+                t: "UI Systems & Experience",
+                d: "Build responsive, reusable product interfaces with complex interaction flows and thoughtful loading, error, and empty states."
+              },
+              {
+                t: "Performance",
+                d: "Lazy loading, memoization, caching, and compressed static resources on checkout — conversion as an engineering problem.",
+              },
+            ].map((c) => (
+              <article key={c.t} className="surface rounded-[24px] p-5">
+                <h3 className="text-base font-medium">{c.t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                  {c.d}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section id="system" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <section id="system" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <FadeIn>
           <SectionLabel>System design</SectionLabel>
           <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
@@ -405,30 +408,31 @@ export function HomePage() {
             </p>
           </div>
         </div>
-      </section>
+        </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <FadeIn>
-          <SectionLabel>Problem solving</SectionLabel>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-            {site.dsaCount} DSA problems solved
-          </h2>
-          <p className="mt-3 max-w-lg text-sm text-ink-soft">
-            Practiced across platforms, with a DSA bootcamp at Programming
-            Pathshala and a freeCodeCamp algorithms certification.
-          </p>
-        </FadeIn>
-        <div className="mt-6 flex flex-wrap gap-2">
-          {dsaTopics.map((t) => (
-            <span
-              key={t}
-              className="rounded-full border border-line bg-bg-solid/50 px-3 py-1.5 text-xs text-ink-soft"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      </section>
+        <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+          <FadeIn>
+            <SectionLabel>Problem solving</SectionLabel>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+              {site.dsaCount} DSA problems solved
+            </h2>
+            <p className="mt-3 max-w-lg text-sm text-ink-soft">
+              Practiced across platforms, with a DSA bootcamp at Programming
+              Pathshala and a freeCodeCamp algorithms certification.
+            </p>
+          </FadeIn>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {dsaTopics.map((t) => (
+              <span
+                key={t}
+                className="rounded-full border border-line bg-bg-solid/50 px-3 py-1.5 text-xs text-ink-soft"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </section>
+      </div>
 
       <section id="experience" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <FadeIn>
@@ -460,67 +464,69 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="overflow-hidden rounded-[28px] border border-line">
-            <Image
-              src="/images/portrait-studio.jpeg"
-              alt="Meghan Sharma outdoors"
-              width={900}
-              height={1100}
-              className="h-[500px] w-full object-cover object-[50%_18%]"
-            />
-          </div>
-          <div>
-            <SectionLabel>About</SectionLabel>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-              End-to-end is the interesting part.
-            </h2>
-            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-soft">
-              I like understanding systems completely — how data is modeled, how
-              APIs are contracted, how auth actually holds, and how those pieces
-              become a product someone can finish a checkout or a support
-              journey in.
-            </p>
-            <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft">
-              The last few years have been production work on payments,
-              checkout, merchant onboarding, and agentic API workflows. I still
-              write serious frontend when the product needs it. I also keep DSA
-              and system design sharp — {site.dsaCount} problems, and HLD/LLD as
-              a regular practice, not a buzzword.
-            </p>
-            <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft">
-              Based in {site.location}. Immediately available.
-            </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {quotes.map((q) => (
-                <blockquote
-                  key={q.name}
-                  className="surface rounded-[24px] p-4 text-sm leading-relaxed text-ink-soft"
-                >
-                  “{q.text}”
-                  <footer className="mt-3 text-xs text-ink">
-                    {q.name} · {q.role}
-                  </footer>
-                </blockquote>
-              ))}
+      <div className="engineering-gradient">
+        <section id="about" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+          <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="overflow-hidden rounded-[28px] border border-line">
+              <Image
+                src="/images/portrait-studio.jpeg"
+                alt="Meghan Sharma outdoors"
+                width={900}
+                height={1100}
+                className="h-[500px] w-full object-cover object-[50%_18%]"
+              />
             </div>
-            <div className="mt-8">
-              <p className="text-xs uppercase tracking-[0.16em] text-ink-soft">
-                Education
+            <div>
+              <SectionLabel>About</SectionLabel>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+                End-to-end is the interesting part.
+              </h2>
+              <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-soft">
+                I like understanding systems completely — how data is modeled, how
+                APIs are contracted, how auth actually holds, and how those pieces
+                become a product someone can finish a checkout or a support
+                journey in.
               </p>
-              <ul className="mt-3 space-y-2 text-sm">
-                {education.map((e) => (
-                  <li key={e.place}>
-                    <span className="font-medium">{e.place}</span>
-                    <span className="text-ink-soft"> — {e.detail}</span>
-                  </li>
+              <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft">
+                The last few years have been production work on payments,
+                checkout, merchant onboarding, and agentic API workflows. I still
+                write serious frontend when the product needs it. I also keep DSA
+                and system design sharp — {site.dsaCount} problems, and HLD/LLD as
+                a regular practice, not a buzzword.
+              </p>
+              <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft">
+                Based in {site.location}. Immediately available.
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {quotes.map((q) => (
+                  <blockquote
+                    key={q.name}
+                    className="surface rounded-[24px] p-4 text-sm leading-relaxed text-ink-soft"
+                  >
+                    “{q.text}”
+                    <footer className="mt-3 text-xs text-ink">
+                      {q.name} · {q.role}
+                    </footer>
+                  </blockquote>
                 ))}
-              </ul>
+              </div>
+              <div className="mt-8">
+                <p className="text-xs uppercase tracking-[0.16em] text-ink-soft">
+                  Education
+                </p>
+                <ul className="mt-3 space-y-2 text-sm">
+                  {education.map((e) => (
+                    <li key={e.place}>
+                      <span className="font-medium">{e.place}</span>
+                      <span className="text-ink-soft"> — {e.detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section id="contact" className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
         <FadeIn>

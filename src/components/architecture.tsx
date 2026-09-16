@@ -19,7 +19,7 @@ export function ArchitectureDiagram({
       <p className="text-[11px] uppercase tracking-[0.18em] text-ink-soft">
         Architecture
       </p>
-      <div className="mt-5 flex flex-col gap-3">
+      <div className="mt-5 flex flex-col">
         {nodes.map((node, index) => {
           const hasNext = edges.some((e) => e.from === node.id);
           return (
