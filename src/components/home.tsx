@@ -101,7 +101,7 @@ export function HomePage() {
             </a> */}
           </div>
           <p className="mt-8 text-sm text-ink-soft">
-            {site.years} years · Node.js · NestJS · APIs · Databases · System
+            {site.years} years · MERN Stack · NestJS · APIs · Databases · System
             Design · DSA
           </p>
         </div>
@@ -459,11 +459,11 @@ export function HomePage() {
         <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="overflow-hidden rounded-[28px] border border-line">
             <Image
-              src="/images/portrait-about.jpeg"
+              src="/images/portrait-studio.jpeg"
               alt="Meghan Sharma outdoors"
               width={900}
               height={1100}
-              className="h-[420px] w-full object-cover object-[50%_18%]"
+              className="h-[500px] w-full object-cover object-[50%_18%]"
             />
           </div>
           <div>

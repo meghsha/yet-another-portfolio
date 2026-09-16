@@ -4,7 +4,7 @@ export const site = {
   role: "Software Engineer",
   headline: "Software Engineer building scalable systems and products.",
   subhead:
-    "Backend-focused full-stack engineer. I design APIs, data models, and auth flows — then ship the product surfaces that sit on top of them.",
+    "System Design-focused full-stack engineer. I design APIs, data models, and auth flows — then ship the product surfaces that sit on top of them.",
   location: "Delhi NCR · Gurugram · Noida",
   email: "officialmeghan1@gmail.com",
   phone: "+91 9509234051",
@@ -13,7 +13,7 @@ export const site = {
   resumePath: "/resume/Meghan-Sharma-Resume.pdf",
   available: true,
   availabilityLabel: "Available for opportunities",
-  years: "4+",
+  years: "3+",
   dsaCount: "600+",
 } as const;
 

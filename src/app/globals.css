@@ -63,7 +63,7 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background: transparent;
   color: var(--ink);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -74,6 +74,12 @@ body {
   color: var(--ink);
 }
 
+/* Ensure sections have transparent background to show gradient */
+section {
+  background: transparent;
+}
+
+/* Surface and hairline */
 .surface {
   background: var(--bg-elevated);
   backdrop-filter: blur(24px);
@@ -84,4 +90,16 @@ body {
 
 .hairline {
   border: 1px solid var(--line);
+}
+
+/* Override for gradient background */
+.bg-bg {
+  background-color: transparent;
+  background-image: linear-gradient(135deg, #fff8e1, #ffecb3, #e8f5e9);
+}
+
+/* Dark mode gradient override */
+html.dark .bg-bg {
+  background-color: transparent;
+  background-image: linear-gradient(135deg, #263238, #37474f);
 }
