@@ -782,16 +782,19 @@ export const additionalWork = [
   {
     name: "GraphQL CRUD",
     stack: "GraphQL",
+    href: "",
     github: "https://github.com/meghsha/GraphQL-CRUD-Operations",
   },
   {
     name: "Prisma CRUD APIs",
     stack: "Node · Express · Prisma · MySQL",
+    href: "",
     github: "https://github.com/meghsha/Node-Prisma-CRUD-API",
   },
   {
     name: "Social (T3)",
     stack: ["Next.js", "Prisma", "TypeScript", "Tailwind"],
+    href: "",
     github: "https://github.com/meghsha/twitter-clone",
   },
 ] as const;

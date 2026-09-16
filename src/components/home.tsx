@@ -7,10 +7,12 @@ import {
   ArrowUpRight,
   Copy,
   Download,
-  // Github,
-  // Linkedin,
   Mail,
 } from "lucide-react";
+import {
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
 import {
   additionalWork,
   backendCapabilities,
@@ -40,7 +42,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export function HomePage() {
   const { ping } = useStatus();
-  const [sysNode, setSysNode] = useState(systemDesignNodes[2].id);
+  const [sysNode, setSysNode] = useState<string>(systemDesignNodes[2].id);
   const sys = systemDesignNodes.find((n) => n.id === sysNode)!;
 
   return (
@@ -81,24 +83,24 @@ export function HomePage() {
               <Download size={15} />
               Download Résumé
             </a>
-            {/* <a
+            <a
               href={site.github}
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
               className="rounded-full border border-line p-2.5"
             >
-              <Github size={16} />
-            </a> */}
-            {/* <a
+              <FaGithub size={16} />
+            </a>
+            <a
               href={site.linkedin}
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
               className="rounded-full border border-line p-2.5"
             >
-              <Linkedin size={16} />
-            </a> */}
+              <FaLinkedin size={16} />
+            </a>
           </div>
           <p className="mt-8 text-sm text-ink-soft">
             {site.years} years · MERN Stack · NestJS · APIs · Databases · System
@@ -283,7 +285,7 @@ export function HomePage() {
           {additionalWork.map((item) => (
             <a
               key={item.name}
-              href={item.href ?? item.github}
+              href={item.href ? item.href : item.github}
               target="_blank"
               rel="noreferrer"
               className="rounded-full border border-line px-3 py-1.5 text-xs text-ink-soft hover:text-ink"
@@ -379,8 +381,8 @@ export function HomePage() {
               <div key={node.id} className="flex items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => setSysNode(node.id)}
-                  onMouseEnter={() => setSysNode(node.id)}
+                  onClick={() => setSysNode(node?.id)}
+                  onMouseEnter={() => setSysNode(node?.id)}
                   className={cn(
                     "rounded-2xl border px-4 py-3 text-sm transition",
                     sysNode === node.id
