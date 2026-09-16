@@ -479,7 +479,7 @@ export function HomePage() {
             <div>
               <SectionLabel>About</SectionLabel>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-                End-to-end is the interesting part.
+                Like putting all the pieces together.
               </h2>
               <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-soft">
                 I like understanding systems completely — how data is modeled, how

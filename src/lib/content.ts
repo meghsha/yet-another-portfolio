@@ -316,14 +316,14 @@ export const certifications = [
 
 export const quotes = [
   {
-    name: "Rohit Saini",
-    role: "Full Stack Developer",
-    text: "No matter the field, he brings clarity, problem-solving skills, and a deep understanding that sets him apart.",
+    name: "Kamran Adil",
+    role: "CEO - CloudTech",
+    text: "Meghan is a person who gets the work done. He is hard working, very organised and process oriented. He learns quickly and can be trusted with high priority responsibilities." 
   },
   {
-    name: "Mayank Sharma",
-    role: "Product Analyst",
-    text: "His technical expertise, problem-solving mindset, and adaptability set him apart. Meghan consistently delivers results.",
+    name: "Shalu Bajaj",
+    role: "Technical Project Manager",
+    text: "Meghan is a motivated, forward-thinking, intelligent engineer with lots of knowledge in his field. He deliver results and move on. That's Meghan's way.",
   },
 ] as const;
 
