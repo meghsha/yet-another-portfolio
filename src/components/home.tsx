@@ -321,6 +321,46 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <FadeIn>
+          <SectionLabel>Frontend engineering</SectionLabel>
+          <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
+            Interfaces as clients of real systems.
+          </h2>
+        </FadeIn>
+        <div className="mt-8 grid gap-3 md:grid-cols-3">
+          {[
+            {
+              t: "Frontend Architecture",
+              d: "Architect scalable frontend applications with modular component structures, well-defined API boundaries, and micro-frontend patterns."
+            },
+            {
+              t: "Application architecture",
+              d: "React, Next.js, Svelte, and TypeScript for checkout, payments, dashboards, and product apps — consuming APIs, not decorating them.",
+            },
+            {
+              t: "State & rendering",
+              d: "Redux Toolkit, Context, SSR on Next.js for SEO, and Svelte surfaces on high-traffic commerce paths.",
+            },
+            {
+              t: "UI Systems & Experience",
+              d: "Build responsive, reusable product interfaces with complex interaction flows and thoughtful loading, error, and empty states."
+            },
+            {
+              t: "Performance",
+              d: "Lazy loading, memoization, caching, and compressed static resources on checkout — conversion as an engineering problem.",
+            },
+          ].map((c) => (
+            <article key={c.t} className="surface rounded-[24px] p-5">
+              <h3 className="text-base font-medium">{c.t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                {c.d}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="system" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <FadeIn>
           <SectionLabel>System design</SectionLabel>
@@ -389,38 +429,6 @@ export function HomePage() {
             >
               {t}
             </span>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <FadeIn>
-          <SectionLabel>Frontend engineering</SectionLabel>
-          <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
-            Interfaces as clients of real systems.
-          </h2>
-        </FadeIn>
-        <div className="mt-8 grid gap-3 md:grid-cols-3">
-          {[
-            {
-              t: "Application architecture",
-              d: "React, Next.js, Svelte, and TypeScript for checkout, payments, dashboards, and product apps — consuming APIs, not decorating them.",
-            },
-            {
-              t: "State & rendering",
-              d: "Redux Toolkit, Context, SSR on Next.js for SEO, and Svelte surfaces on high-traffic commerce paths.",
-            },
-            {
-              t: "Performance",
-              d: "Lazy loading, memoization, caching, and compressed static resources on checkout — conversion as an engineering problem.",
-            },
-          ].map((c) => (
-            <article key={c.t} className="surface rounded-[24px] p-5">
-              <h3 className="text-base font-medium">{c.t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                {c.d}
-              </p>
-            </article>
           ))}
         </div>
       </section>

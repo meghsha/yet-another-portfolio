@@ -19,8 +19,8 @@ export const site = {
 export const navItems = [
   { href: "/#home", id: "home", label: "Home" },
   { href: "/#work", id: "work", label: "Work" },
-  { href: "/#experience", id: "experience", label: "Experience" },
   { href: "/#engineering", id: "engineering", label: "Engineering" },
+  { href: "/#experience", id: "experience", label: "Experience" },
   { href: "/#about", id: "about", label: "About" },
   { href: "/#contact", id: "contact", label: "Contact" },
 ] as const;
