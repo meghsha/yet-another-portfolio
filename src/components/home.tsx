@@ -321,11 +321,11 @@ export function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <section className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
           <FadeIn>
             <SectionLabel>Frontend engineering</SectionLabel>
             <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
-              Interfaces as clients of real systems.
+              Engineering better user experiences.
             </h2>
           </FadeIn>
           <div className="mt-8 grid gap-3 md:grid-cols-3">
@@ -361,56 +361,56 @@ export function HomePage() {
           </div>
         </section>
 
-        <section id="system" className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <FadeIn>
-          <SectionLabel>System design</SectionLabel>
-          <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
-            Inspect a path. Not a textbook.
-          </h2>
-          <p className="mt-3 max-w-xl text-sm text-ink-soft">
-            Production experience sits on APIs, cache, data, and integrations.
-            CDN and load-balancing notes are engineering knowledge, not claimed
-            as every production implementation.
-          </p>
-        </FadeIn>
-        <div className="mt-8 grid gap-4 lg:grid-cols-[1fr_0.7fr]">
-          <div className="surface flex flex-wrap items-center justify-center gap-2 rounded-[28px] p-6">
-            {systemDesignNodes.map((node, i) => (
-              <div key={node.id} className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setSysNode(node?.id)}
-                  onMouseEnter={() => setSysNode(node?.id)}
-                  className={cn(
-                    "rounded-2xl border px-4 py-3 text-sm transition",
-                    sysNode === node.id
-                      ? "border-accent/40 bg-accent-soft"
-                      : "border-line bg-bg-solid/50",
-                  )}
-                >
-                  {node.label}
-                  {"knowledge" in node && node.knowledge ? (
-                    <span className="mt-1 block text-[10px] text-ink-soft">
-                      knowledge
-                    </span>
-                  ) : null}
-                </button>
-                {i < systemDesignNodes.length - 1 ? (
-                  <span className="hidden text-ink-soft sm:inline">→</span>
-                ) : null}
-              </div>
-            ))}
-          </div>
-          <div className="surface rounded-[28px] p-6">
-            <p className="text-sm font-medium">{sys.label}</p>
-            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-              {sys.detail}
+        <section id="system" className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+          <FadeIn>
+            <SectionLabel>System design</SectionLabel>
+            <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight">
+              Designing systems that scale.
+            </h2>
+            <p className="mt-3 max-w-xl text-sm text-ink-soft">
+              Production experience sits on APIs, cache, data, and integrations.
+              CDN and load-balancing notes are engineering knowledge, not claimed
+              as every production implementation.
             </p>
+          </FadeIn>
+          <div className="mt-8 grid gap-4 lg:grid-cols-[1fr_0.7fr]">
+            <div className="surface flex flex-wrap items-center justify-center gap-2 rounded-[28px] p-6">
+              {systemDesignNodes.map((node, i) => (
+                <div key={node.id} className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setSysNode(node?.id)}
+                    onMouseEnter={() => setSysNode(node?.id)}
+                    className={cn(
+                      "rounded-2xl border px-4 py-3 text-sm transition",
+                      sysNode === node.id
+                        ? "border-accent/40 bg-accent-soft"
+                        : "border-line bg-bg-solid/50",
+                    )}
+                  >
+                    {node.label}
+                    {"knowledge" in node && node.knowledge ? (
+                      <span className="mt-1 block text-[10px] text-ink-soft">
+                        knowledge
+                      </span>
+                    ) : null}
+                  </button>
+                  {i < systemDesignNodes.length - 1 ? (
+                    <span className="hidden text-ink-soft sm:inline">→</span>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+            <div className="surface rounded-[28px] p-6">
+              <p className="text-sm font-medium">{sys.label}</p>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                {sys.detail}
+              </p>
+            </div>
           </div>
-        </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <section style={{ marginTop: "-2rem" }} className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <FadeIn>
             <SectionLabel>Problem solving</SectionLabel>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight">
@@ -473,7 +473,7 @@ export function HomePage() {
                 alt="Meghan Sharma outdoors"
                 width={900}
                 height={1100}
-                className="h-[500px] w-full object-cover object-[50%_18%]"
+                className="h-[520px] w-full object-cover object-[50%_18%]"
               />
             </div>
             <div>
