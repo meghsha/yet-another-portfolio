@@ -128,12 +128,11 @@ export function HomePage() {
 
       <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <FadeIn>
-          <SectionLabel>Engineering identity</SectionLabel>
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight">
-            Systems first. Product when it needs a face.
+            Some of the arrows in my bow -
           </h2>
         </FadeIn>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
           <BentoCard
             title={bento.backend.title}
             items={bento.backend.items}
@@ -171,14 +170,10 @@ export function HomePage() {
         <FadeIn>
           <SectionLabel>Selected work</SectionLabel>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight">
-            Production systems, then products.
+            Some of my recent Projects | Products.
           </h2>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-soft">
-            Professional commerce and agent-orchestration work first. Personal
-            full-stack builds after. Tutorial clones stay in the archive.
-          </p>
         </FadeIn>
-        <div className="mt-10 space-y-8">
+        <div className="mt-6 space-y-8">
           {featuredProjects.map((project, i) => (
             <FadeIn key={project.slug} delay={i * 0.04}>
               <article className="surface overflow-hidden rounded-[28px]">
