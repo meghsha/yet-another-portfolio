@@ -77,6 +77,7 @@ body {
 /* Ensure sections have transparent background to show gradient */
 section {
   background: transparent;
+  border: none;
 }
 
 /* Surface and hairline */
@@ -96,10 +97,17 @@ section {
 .bg-bg {
   background-color: transparent;
   background-image: linear-gradient(135deg, #fff8e1, #ffecb3, #e8f5e9);
+   /* Prevent gradient from restarting between sections */
+  background-attachment: fixed;
+  background-size: 100vw 100vh;
+  background-position: top left;
 }
 
 /* Dark mode gradient override */
 html.dark .bg-bg {
   background-color: transparent;
   background-image: linear-gradient(135deg, #263238, #37474f);
+  background-attachment: fixed;
+  background-size: 100vw 100vh;
+  background-position: top left;
 }

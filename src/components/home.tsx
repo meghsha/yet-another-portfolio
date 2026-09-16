@@ -118,7 +118,7 @@ export function HomePage() {
           </div>
           <div className="surface absolute right-3 bottom-3 left-3 rounded-2xl px-4 py-3 sm:right-5 sm:bottom-5 sm:left-auto sm:w-56">
             <p className="text-[11px] text-ink-soft">Currently</p>
-            <p className="text-sm font-medium">SDE-1 · MelodyArc</p>
+            <p className="text-sm font-medium">SDE · MelodyArc</p>
             <p className="text-xs text-ink-soft">Ex-GoKwik · Backend-leaning</p>
           </div>
         </FadeIn>

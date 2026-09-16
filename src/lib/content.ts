@@ -3,17 +3,16 @@ export const site = {
   firstName: "Meghan",
   role: "Software Engineer",
   headline: "Software Engineer building scalable systems and products.",
-  subhead:
-    "System Design-focused full-stack engineer. I design APIs, data models, and auth flows — then ship the product surfaces that sit on top of them.",
+  subhead: "I work across the entire stack — crafting polished, fancy interfaces while engineering scalable APIs, data models, auth flows, & system architecture.",
   location: "Delhi NCR · Gurugram · Noida",
   email: "officialmeghan1@gmail.com",
   phone: "+91 9509234051",
   github: "https://github.com/meghsha",
-  linkedin: "https://www.linkedin.com/in/meghan-sharma-42119176",
+  linkedin: "https://www.linkedin.com/in/meghan-sharma-421919176/",
   resumePath: "/resume/Meghan-Sharma-Resume.pdf",
   available: true,
   availabilityLabel: "Available for opportunities",
-  years: "3+",
+  years: "Around 4",
   dsaCount: "600+",
 } as const;
 
@@ -215,7 +214,7 @@ export const experience = [
   {
     company: "MelodyArc",
     aka: "ElbowCurve",
-    role: "SDE-1",
+    role: "SDE",
     location: "Delhi · Remote",
     dates: "Dec 2025 — Present",
     summary:
@@ -355,6 +354,37 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "fitness-plus",
+    name: "Fitness+",
+    tier: 3,
+    featured: false,
+    oneLiner: "Fitness application with exercise tracking and RapidAPI for workout data",
+    contribution: "Developed a fitness tracking app using RapidAPI for exercise data specific to body parts, Material UI for styling, React functional components, and pagination for enhanced user experience with YouTube tutorial integration. Built backend services for workout logging and progress tracking.",
+    backend: ["RapidAPI exercise integration", "Workout tracking logic", "User authentication service", "Progress tracking APIs", "Exercise categorization by body part"],
+    frontend: ["React", "Material UI", "React Functional Components", "Pagination", "YouTube API"],
+    challenges: ["Fetching specific body part exercise data from RapidAPI", "Integrating YouTube tutorial videos for exercise demonstrations", "Implementing effective pagination for exercise lists", "Ensuring accurate workout tracking and progress visualization"],
+    stack: ["React", "RapidAPI", "Material UI", "YouTube API"],
+    live: "https://fitnesspluszone.netlify.app/",
+    github: "https://github.com/meghsha/React-Fitness-App",
+    architecture: {
+      nodes: [
+        { id: "user", label: "User", hint: "Fitness enthusiast tracking workouts" },
+        { id: "api", label: "RapidAPI", hint: "Fetching exercise data by body part" },
+        { id: "ui", label: "React UI", hint: "Material UI components with exercise display" },
+        { id: "yt", label: "YouTube Tutorials", hint: "Exercise demonstration videos" }
+      ],
+      edges: [
+        { from: "user", to: "ui" },
+        { from: "ui", to: "api" },
+        { from: "api", to: "api" }
+      ]
+    },
+    overview: "A comprehensive fitness application that provides exercise data filtered by body parts, accompanied by YouTube tutorials for proper form demonstration and tracking capabilities.",
+    problem: "Fitness enthusiasts needed an organized way to find exercises for specific body parts with reliable visual guidance for proper execution.",
+    role: "Full-stack developer implementing API integration, UI components, and fitness tracking features.",
+    impact: ["Integrated RapidAPI for specific body part exercise data", "Added YouTube tutorial integration for exercise guidance", "Implemented pagination for improved browsing experience", "Built backend services for workout logging"]
+  },
+  {
     slug: "gokwik-checkout",
     name: "GoKwik Checkout",
     tier: 3,
@@ -380,6 +410,7 @@ export const projects: Project[] = [
       "Orchestrating cart, address, shipping, and gateway steps as one system",
     ],
     stack: ["NestJS", "Node.js", "MongoDB", "MySQL", "Svelte", "REST APIs"],
+    live: "https://www.boat-lifestyle.com/",
     architecture: {
       nodes: [
         { id: "buyer", label: "Shopper", hint: "Cart through pay" },
@@ -403,6 +434,60 @@ export const projects: Project[] = [
       "Checkout was a conversion bottleneck. Extra API calls and heavy assets slowed the path to pay.",
     role: "Backend APIs and data access in NestJS, plus performance work on the Svelte checkout client.",
     impact: ["Up to 30% improvement in conversion on the checkout flow"],
+  },
+  {
+    slug: "gokwik-payments",
+    name: "GoKwik Payments",
+    tier: 3,
+    featured: false,
+    company: "GoKwik",
+    oneLiner:
+      "Production payments application integrated with 300+ Shopify stores.",
+    contribution:
+      "Worked across payment workflows, API integrations, browser storage, and NestJS backend services so merchants could collect UPI, cards, EMI, wallets, and more without dropping the checkout thread.",
+    backend: [
+      "NestJS services for payment workflows",
+      "REST APIs across payment methods",
+      "MongoDB + MySQL persistence",
+      "Redis for faster, more reliable responses",
+    ],
+    frontend: [
+      "Svelte product surfaces",
+      "Browser storage for payment state",
+      "Modular, reusable payment UI",
+    ],
+    challenges: [
+      "Keeping many payment methods (UPI, QR, cards, EMI, CredPay, wallets) on one reliable path",
+      "Coordinating Shopify storefronts with backend payment services",
+    ],
+    stack: ["NestJS", "MongoDB", "MySQL", "Redis", "Svelte", "REST APIs"],
+    live: "https://beastlife.in/",
+    architecture: {
+      nodes: [
+        { id: "store", label: "Shopify store", hint: "300+ merchant storefronts" },
+        { id: "ui",label: "Payments UI", hint: "Svelte + browser storage" },
+        { id: "api", label: "NestJS APIs", hint: "Payment workflows & REST" },
+        { id: "cache", label: "Redis", hint: "Response-time caching" },
+        { id: "db", label: "MongoDB / MySQL", hint: "Transactional & document data" },
+        { id: "psp", label: "Payment methods", hint: "UPI, QR, cards, EMI, wallets" },
+      ],
+      edges: [
+        { from: "store", to: "ui" },
+        { from: "ui", to: "api" },
+        { from: "api", to: "cache" },
+        { from: "api", to: "db" },
+        { from: "api", to: "psp" },
+      ],
+    },
+    overview:
+      "A payments layer used by hundreds of Shopify merchants. Shoppers complete UPI, QR, card, EMI, CredPay, and wallet flows without leaving the GoKwik checkout experience.",
+    problem:
+      "Merchants needed one reliable payments surface across many methods and stores, backed by services that could keep up with real checkout traffic.",
+    role: "Full-stack engineering on the payments application — backend services, API integrations, and the Svelte client that merchants and shoppers actually use.",
+    impact: [
+      "Integrated with 300+ Shopify stores",
+      "Lakhs of end users on the broader GoKwik commerce stack",
+    ],
   },
   {
     slug: "melodyarc-workflows",
@@ -429,6 +514,7 @@ export const projects: Project[] = [
       "Keeping multi-agent workflows accurate across 15+ support journeys",
     ],
     stack: ["REST", "GraphQL", "OAuth", "Enterprise APIs", "Agent orchestration"],
+    live: "https://melodyarc.com/product",
     architecture: {
       nodes: [
         { id: "cx", label: "Customer", hint: "Returns, cancel, track, refund" },
@@ -510,7 +596,7 @@ export const projects: Project[] = [
     oneLiner:
       "MERN storefront with cart, reviews, addresses, orders, and PayPal.",
     contribution:
-      "Built complete frontend and backend: catalog, cart, reviews, addresses, payments, and order workflows, with Redux Toolkit for client state.",
+      "Built complete frontend and backend: catalog, cart, reviews, addresses, orders, and payments, with Redux Toolkit for client state.",
     backend: [
       "Node / Express backend",
       "Order and payment workflows including PayPal",
@@ -550,57 +636,35 @@ export const projects: Project[] = [
     role: "Full-stack personal project covering APIs, data, payments, and the React client.",
   },
   {
-    slug: "gokwik-payments",
-    name: "GoKwik Payments",
+    slug: "customised-lms",
+    name: "Customised Learning Tool",
     tier: 1,
     featured: true,
-    company: "GoKwik",
-    oneLiner:
-      "Production payments application integrated with 300+ Shopify stores.",
-    contribution:
-      "Worked across payment workflows, API integrations, browser storage, and NestJS backend services so merchants could collect UPI, cards, EMI, wallets, and more without dropping the checkout thread.",
-    backend: [
-      "NestJS services for payment workflows",
-      "REST APIs across payment methods",
-      "MongoDB + MySQL persistence",
-      "Redis for faster, more reliable responses",
-    ],
-    frontend: [
-      "Svelte product surfaces",
-      "Browser storage for payment state",
-      "Modular, reusable payment UI",
-    ],
-    challenges: [
-      "Keeping many payment methods (UPI, QR, cards, EMI, CredPay, wallets) on one reliable path",
-      "Coordinating Shopify storefronts with backend payment services",
-    ],
-    stack: ["NestJS", "MongoDB", "MySQL", "Redis", "Svelte", "REST APIs"],
+    oneLiner: "Educational platform with YouTube integration and RapidAPI for course content",
+    contribution: "Built a YouTube clone for educational content using RapidAPI for data fetching, Material UI for styling, React functional components, and React Router for multi-page navigation with pagination support. Developed backend API integration with RapidAPI for educational video metadata and course structuring.",
+    backend: ["RapidAPI integration", "REST API design", "Educational metadata service", "Course structuring APIs"],
+    frontend: ["React", "Material UI", "React Router", "Functional components", "Pagination"],
+    challenges: ["Integrating YouTube data API for educational content", "Implementing smooth pagination for large datasets", "Creating responsive UI with Material UI", "Managing state for video playback and course progress"],
+    stack: ["React", "RapidAPI", "Material UI", "React Router"],
+    live: "https://customised-lms.netlify.app/",
+    github: "https://github.com/meghsha/Youtube-Clone",
     architecture: {
       nodes: [
-        { id: "store", label: "Shopify store", hint: "300+ merchant storefronts" },
-        { id: "ui", label: "Payments UI", hint: "Svelte + browser storage" },
-        { id: "api", label: "NestJS APIs", hint: "Payment workflows & REST" },
-        { id: "cache", label: "Redis", hint: "Response-time caching" },
-        { id: "db", label: "MongoDB / MySQL", hint: "Transactional & document data" },
-        { id: "psp", label: "Payment methods", hint: "UPI, QR, cards, EMI, wallets" },
+        { id: "user", label: "User", hint: "Learner interacting with content" },
+        { id: "api", label: "RapidAPI", hint: "Fetching educational videos and course data" },
+        { id: "ui", label: "React UI", hint: "Material UI components with Router" },
+        { id: "yt", label: "YouTube Embed", hint: "Video playback functionality" }
       ],
       edges: [
-        { from: "store", to: "ui" },
+        { from: "user", to: "ui" },
         { from: "ui", to: "api" },
-        { from: "api", to: "cache" },
-        { from: "api", to: "db" },
-        { from: "api", to: "psp" },
-      ],
+        { from: "api", to: "yt" }
+      ]
     },
-    overview:
-      "A payments layer used by hundreds of Shopify merchants. Shoppers complete UPI, QR, card, EMI, CredPay, and wallet flows without leaving the GoKwik checkout experience.",
-    problem:
-      "Merchants needed one reliable payments surface across many methods and stores, backed by services that could keep up with real checkout traffic.",
-    role: "Full-stack engineering on the payments application — backend services, API integrations, and the Svelte client that merchants and shoppers actually use.",
-    impact: [
-      "Integrated with 300+ Shopify stores",
-      "Lakhs of end users on the broader GoKwik commerce stack",
-    ],
+    overview: "A customised learning platform that integrates YouTube educational content with course management features, built using React and RapidAPI for seamless video streaming and educational resource discovery.",
+    problem: "Students needed a centralized platform for educational YouTube content with structured learning paths and progress tracking.",
+    role: "Full-stack developer responsible for API integration, UI design, and implementation of educational features.",
+    impact: ["Successfully integrated YouTube API for educational content", "Implemented responsive design with Material UI", "Added pagination for efficient content browsing", "Developed backend services for course metadata"]
   },
   {
     slug: "codecorners-pm",
@@ -679,39 +743,8 @@ export const projects: Project[] = [
     role: "Full-stack personal project.",
   },
   {
-    slug: "twitter-clone",
-    name: "Social (T3)",
-    tier: 3,
-    featured: false,
-    oneLiner: "Social app on the T3 stack — Next.js, Prisma, TypeScript.",
-    contribution:
-      "Built a social product using Next.js, React, Tailwind, Prisma, and TypeScript.",
-    backend: ["Prisma data layer", "TypeScript end-to-end"],
-    frontend: ["Next.js + React + Tailwind"],
-    challenges: ["Typed full-stack data flow with Prisma"],
-    stack: ["Next.js", "Prisma", "TypeScript", "Tailwind"],
-    github: "https://github.com/meghsha/twitter-clone",
-    live: "https://twitter-clone-meghsha.vercel.app",
-    architecture: {
-      nodes: [
-        { id: "u", label: "User", hint: "Feed & posts" },
-        { id: "n", label: "Next.js", hint: "T3 app" },
-        { id: "p", label: "Prisma", hint: "Typed schema" },
-        { id: "db", label: "Database", hint: "Relational store" },
-      ],
-      edges: [
-        { from: "u", to: "n" },
-        { from: "n", to: "p" },
-        { from: "p", to: "db" },
-      ],
-    },
-    overview: "A social media app built with the T3 stack.",
-    problem: "Practice shipping a typed full-stack product, not only a UI clone.",
-    role: "Personal full-stack project.",
-  },
-  {
     slug: "auth-sample",
-    name: "Auth System Sample",
+    name: "Auth System",
     tier: 3,
     featured: false,
     oneLiner: "Boilerplate authentication system in Node.",
@@ -736,16 +769,10 @@ export const projects: Project[] = [
     overview: "A sample authentication system for reuse as boilerplate.",
     problem: "Auth is easy to get subtly wrong; a clean reference helps.",
     role: "Personal backend reference project.",
-  },
+  }
 ];
 
 export const additionalWork = [
-  {
-    name: "Fitness+",
-    stack: "React · RapidAPI · Material UI",
-    href: "https://fitnesspluszone.netlify.app/",
-    github: "https://github.com/meghsha/React-Fitness-App",
-  },
   {
     name: "Cocktail Hunter",
     stack: "React · Context · CocktailDB",
@@ -763,10 +790,9 @@ export const additionalWork = [
     github: "https://github.com/meghsha/Node-Prisma-CRUD-API",
   },
   {
-    name: "LMS / YouTube",
-    stack: "React · RapidAPI",
-    href: "https://customised-lms.netlify.app/",
-    github: "https://github.com/meghsha/Youtube-Clone",
+    name: "Social (T3)",
+    stack: ["Next.js", "Prisma", "TypeScript", "Tailwind"],
+    github: "https://github.com/meghsha/twitter-clone",
   },
 ] as const;
 
