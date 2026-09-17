@@ -188,18 +188,18 @@ export function HomePage() {
             Some of my recent Projects | Products.
           </h2>
         </FadeIn>
-        <div className="mt-8">
+        <div className="mt-8 pb-[60px]">
           {featuredProjects.map((project, i) => (
             <div
               key={project.slug}
               className="project-stack-card"
               style={{
-                top: `${72 + i * 22}px`,
+                top: `${72 + i * 18}px`,
                 zIndex: i + 1,
               }}
             >
-                <article className="surface overflow-hidden rounded-[28px]">
-                  <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+              <article className="surface project-card overflow-hidden rounded-[28px] lg:h-[560px]">
+                <div className="grid h-full lg:grid-cols-[1.1fr_0.9fr]">
                     <div className="p-6 sm:p-8">
                       <p className="text-[11px] uppercase tracking-[0.16em] text-ink-soft">
                         {project.company ?? "Personal"}{" "}
