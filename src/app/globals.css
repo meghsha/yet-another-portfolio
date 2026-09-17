@@ -173,10 +173,6 @@ html.dark .skill-card-primary {
     );
 }
 
-.project-stack-card {
-  position: sticky;
-}
-
 .project-card {
   position: relative;
   background: var(--bg-solid);
@@ -184,4 +180,14 @@ html.dark .skill-card-primary {
     0 -1px 0 rgba(255, 255, 255, 0.9),
     0 -5px 16px rgba(0, 0, 0, 0.06),
     var(--shadow);
+}
+
+/* Stack project cards only on larger screens */
+@media (min-width: 768px) {
+  .project-stack-card {
+    position: sticky;
+  }
+  .marginTopDesktop {
+    margin-top: 1.3rem;
+  }
 }

@@ -188,7 +188,7 @@ export function HomePage() {
             Some of my recent Projects | Products.
           </h2>
         </FadeIn>
-        <div className="mt-8 pb-[60px]">
+        <div className="mt-8 pb-[10px]">
           {featuredProjects.map((project, i) => (
             <div
               key={project.slug}
@@ -198,94 +198,96 @@ export function HomePage() {
                 zIndex: i + 1,
               }}
             >
-              <article className="surface project-card overflow-hidden rounded-[28px] lg:h-[560px]">
-                <div className="grid h-full lg:grid-cols-[1.1fr_0.9fr]">
-                    <div className="p-6 sm:p-8">
-                      <p className="text-[11px] uppercase tracking-[0.16em] text-ink-soft">
-                        {project.company ?? "Personal"}{" "}
-                        {project.tier === 1 ? "· Featured" : ""}
-                      </p>
-                      <h3 className="mt-2 text-2xl font-semibold tracking-tight">
-                        {project.name}
-                      </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                        {project.oneLiner}
-                      </p>
-                      <p className="mt-4 text-sm leading-relaxed">
-                        {project.contribution}
-                      </p>
-                      <div className="mt-6 grid gap-5 sm:grid-cols-2">
-                        <div>
-                          <p className="text-xs font-medium">Backend</p>
-                          <ul className="mt-2 space-y-1 text-sm text-ink-soft">
-                            {project.backend.slice(0, 4).map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="text-xs font-medium">
-                            {project.frontend.length
-                              ? "Frontend"
-                              : "Engineering"}
-                          </p>
-                          <ul className="mt-2 space-y-1 text-sm text-ink-soft">
-                            {(project.frontend.length
-                              ? project.frontend
-                              : project.challenges
-                            )
-                              .slice(0, 3)
-                              .map((item) => (
+              <FadeIn key={project.slug} delay={i * 0.04}>
+                <article className="mb-6 surface project-card overflow-hidden rounded-[28px] lg:h-[560px]">
+                  <div className="grid h-full lg:grid-cols-[1.1fr_0.9fr]">
+                      <div className="p-6 sm:p-8">
+                        <p className="text-[11px] uppercase tracking-[0.16em] text-ink-soft">
+                          {project.company ?? "Personal"}{" "}
+                          {project.tier === 1 ? "· Featured" : ""}
+                        </p>
+                        <h3 className="mt-2 text-2xl font-semibold tracking-tight">
+                          {project.name}
+                        </h3>
+                        <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                          {project.oneLiner}
+                        </p>
+                        <p className="mt-4 text-sm leading-relaxed">
+                          {project.contribution}
+                        </p>
+                        <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                          <div>
+                            <p className="text-xs font-medium">Backend</p>
+                            <ul className="mt-2 space-y-1 text-sm text-ink-soft">
+                              {project.backend.slice(0, 4).map((item) => (
                                 <li key={item}>{item}</li>
                               ))}
-                          </ul>
+                            </ul>
+                          </div>
+                          <div>
+                            <p className="text-xs font-medium">
+                              {project.frontend.length
+                                ? "Frontend"
+                                : "Engineering"}
+                            </p>
+                            <ul className="mt-2 space-y-1 text-sm text-ink-soft">
+                              {(project.frontend.length
+                                ? project.frontend
+                                : project.challenges
+                              )
+                                .slice(0, 3)
+                                .map((item) => (
+                                  <li key={item}>{item}</li>
+                                ))}
+                            </ul>
+                          </div>
+                        </div>
+                        <p className="mt-5 text-xs text-ink-soft">
+                          {project.stack.join(" · ")}
+                        </p>
+                        <div className="mt-6 flex flex-wrap gap-3">
+                          <Link
+                            href={`/work/${project.slug}`}
+                            className="inline-flex items-center gap-1 rounded-full bg-ink px-4 py-2 text-sm text-[var(--bg)]"
+                          >
+                            Case study <ArrowUpRight size={14} />
+                          </Link>
+                          {project.live ? (
+                            <a
+                              href={project.live}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="rounded-full border border-line px-4 py-2 text-sm"
+                            >
+                              Live
+                            </a>
+                          ) : null}
+                          {project.github ? (
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="rounded-full border border-line px-4 py-2 text-sm"
+                            >
+                              GitHub
+                            </a>
+                          ) : null}
                         </div>
                       </div>
-                      <p className="mt-5 text-xs text-ink-soft">
-                        {project.stack.join(" · ")}
-                      </p>
-                      <div className="mt-6 flex flex-wrap gap-3">
-                        <Link
-                          href={`/work/${project.slug}`}
-                          className="inline-flex items-center gap-1 rounded-full bg-ink px-4 py-2 text-sm text-[var(--bg)]"
-                        >
-                          Case study <ArrowUpRight size={14} />
-                        </Link>
-                        {project.live ? (
-                          <a
-                            href={project.live}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="rounded-full border border-line px-4 py-2 text-sm"
-                          >
-                            Live
-                          </a>
-                        ) : null}
-                        {project.github ? (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="rounded-full border border-line px-4 py-2 text-sm"
-                          >
-                            GitHub
-                          </a>
-                        ) : null}
+                      <div className="border-t border-line p-5 lg:border-t-0 lg:border-l">
+                        <ArchitectureDiagram
+                          nodes={project.architecture.nodes}
+                          edges={project.architecture.edges}
+                        />
                       </div>
                     </div>
-                    <div className="border-t border-line p-5 lg:border-t-0 lg:border-l">
-                      <ArchitectureDiagram
-                        nodes={project.architecture.nodes}
-                        edges={project.architecture.edges}
-                      />
-                    </div>
-                  </div>
                 </article>
+              </FadeIn>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-3 marginTopDesktop">
           {compactProjects.map((p) => (
             <Link
               key={p.slug}
