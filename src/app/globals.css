@@ -153,3 +153,22 @@ html.dark .engineering-gradient {
       #191526 100%
     );
 }
+
+.skill-card-primary {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(219, 234, 254, 0.88) 48%,
+      rgba(237, 233, 254, 0.90) 100%
+    );
+}
+
+html.dark .skill-card-primary {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(35, 40, 55, 0.85),
+      rgba(25, 25, 35, 0.7)
+    );
+}

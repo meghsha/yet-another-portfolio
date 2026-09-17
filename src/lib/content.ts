@@ -68,7 +68,7 @@ export const bento = {
   dsa: {
     title: "Problem Solving",
     emphasis: false,
-    items: ["DSA", "Algorithms", "Data structures", "600+ problems solved"],
+    items: ["DSA", "Algorithms", "Data structures", "Computer networks", "600+ problems solved"],
   },
 } as const;
 
@@ -171,7 +171,8 @@ export const dsaTopics = [
   "Linked Lists",
   "Stacks & Queues",
   "Trees",
-  "Graphs",
+  "JSON Objects",
+  "Searching & Sorting",
   "BFS / DFS",
   "Heaps",
   "Binary Search",

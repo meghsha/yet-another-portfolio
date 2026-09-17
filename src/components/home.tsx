@@ -8,6 +8,13 @@ import {
   Copy,
   Download,
   Mail,
+  Server,
+  PanelsTopLeft,
+  Database,
+  Cloud,
+  Network,
+  BrainCircuit,
+  LucideIcon,
 } from "lucide-react";
 import {
   FaGithub,
@@ -121,7 +128,7 @@ export function HomePage() {
           <div className="surface absolute right-3 bottom-3 left-3 rounded-2xl px-4 py-3 sm:right-5 sm:bottom-5 sm:left-auto sm:w-56">
             <p className="text-[11px] text-ink-soft">Currently</p>
             <p className="text-sm font-medium">SDE · MelodyArc</p>
-            <p className="text-xs text-ink-soft">Ex-GoKwik · Backend-leaning</p>
+            <p className="text-xs text-ink-soft">Ex-GoKwik · Product Expert</p>
           </div>
         </FadeIn>
       </section>
@@ -137,32 +144,38 @@ export function HomePage() {
             <BentoCard
               title={bento.backend.title}
               items={bento.backend.items}
-              className="sm:col-span-2 lg:col-span-3 min-h-[130px]"
+              className="sm:col-span-2 lg:col-span-3 min-h-[130px] skill-card-primary"
+              icon={Server}
             />
             <BentoCard
               title={bento.frontend.title}
               items={bento.frontend.items}
-              className="sm:col-span-2 lg:col-span-3 min-h-[130px]"
+              className="sm:col-span-2 lg:col-span-3 min-h-[130px] skill-card-primary"
+              icon={PanelsTopLeft}
             />
             <BentoCard
               title={bento.databases.title}
               items={bento.databases.items}
               className="lg:col-span-2"
+              icon={Database}
             />
             <BentoCard
               title={bento.cloud.title}
               items={bento.cloud.items}
               className="lg:col-span-2"
+              icon={Cloud}
             />
             <BentoCard
               title={bento.system.title}
               items={bento.system.items}
               className="lg:col-span-2"
+              icon={Network}
             />
             <BentoCard
               title={bento.dsa.title}
               items={bento.dsa.items}
               className="lg:col-span-6"
+              icon={BrainCircuit}
             />
           </div>
         </section>
@@ -580,17 +593,37 @@ function BentoCard({
   title,
   items,
   className,
+  icon: Icon,
 }: {
   title: string;
   items: readonly string[];
   className?: string;
+  icon: LucideIcon
 }) {
   return (
-    <article className={cn("surface rounded-[24px] p-5", className)}>
-      <h3 className="text-base font-medium">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-        {items.join(" · ")}
-      </p>
+    <article
+      className={cn(
+        "surface rounded-[24px] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg",
+        className
+      )}
+    >
+      <div className="flex items-center gap-2">
+        <div className="flex h-6 w-6 items-center justify-center rounded-lg border border-line bg-bg-solid/50">
+          <Icon size={16} strokeWidth={1.7} />
+        </div>
+
+        <h3 className="text-base font-medium">{title}</h3>
+      </div>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {items.map((item) => (
+          <span
+            key={item}
+            className="whitespace-nowrap rounded-full border border-line bg-bg-solid/45 px-2.5 py-1 text-xs text-ink-soft"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
     </article>
   );
 }
