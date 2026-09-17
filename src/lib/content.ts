@@ -355,37 +355,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "fitness-plus",
-    name: "Fitness+",
-    tier: 3,
-    featured: false,
-    oneLiner: "Fitness application with exercise tracking and RapidAPI for workout data",
-    contribution: "Developed a fitness tracking app using RapidAPI for exercise data specific to body parts, Material UI for styling, React functional components, and pagination for enhanced user experience with YouTube tutorial integration. Built backend services for workout logging and progress tracking.",
-    backend: ["RapidAPI exercise integration", "Workout tracking logic", "User authentication service", "Progress tracking APIs", "Exercise categorization by body part"],
-    frontend: ["React", "Material UI", "React Functional Components", "Pagination", "YouTube API"],
-    challenges: ["Fetching specific body part exercise data from RapidAPI", "Integrating YouTube tutorial videos for exercise demonstrations", "Implementing effective pagination for exercise lists", "Ensuring accurate workout tracking and progress visualization"],
-    stack: ["React", "RapidAPI", "Material UI", "YouTube API"],
-    live: "https://fitnesspluszone.netlify.app/",
-    github: "https://github.com/meghsha/React-Fitness-App",
-    architecture: {
-      nodes: [
-        { id: "user", label: "User", hint: "Fitness enthusiast tracking workouts" },
-        { id: "api", label: "RapidAPI", hint: "Fetching exercise data by body part" },
-        { id: "ui", label: "React UI", hint: "Material UI components with exercise display" },
-        { id: "yt", label: "YouTube Tutorials", hint: "Exercise demonstration videos" }
-      ],
-      edges: [
-        { from: "user", to: "ui" },
-        { from: "ui", to: "api" },
-        { from: "api", to: "api" }
-      ]
-    },
-    overview: "A comprehensive fitness application that provides exercise data filtered by body parts, accompanied by YouTube tutorials for proper form demonstration and tracking capabilities.",
-    problem: "Fitness enthusiasts needed an organized way to find exercises for specific body parts with reliable visual guidance for proper execution.",
-    role: "Full-stack developer implementing API integration, UI components, and fitness tracking features.",
-    impact: ["Integrated RapidAPI for specific body part exercise data", "Added YouTube tutorial integration for exercise guidance", "Implemented pagination for improved browsing experience", "Built backend services for workout logging"]
-  },
-  {
     slug: "gokwik-checkout",
     name: "GoKwik Checkout",
     tier: 3,
@@ -666,6 +635,37 @@ export const projects: Project[] = [
     problem: "Students needed a centralized platform for educational YouTube content with structured learning paths and progress tracking.",
     role: "Full-stack developer responsible for API integration, UI design, and implementation of educational features.",
     impact: ["Successfully integrated YouTube API for educational content", "Implemented responsive design with Material UI", "Added pagination for efficient content browsing", "Developed backend services for course metadata"]
+  },
+    {
+    slug: "fitness-plus",
+    name: "Fitness+",
+    tier: 2,
+    featured: true,
+    oneLiner: "Fitness application with exercise tracking and RapidAPI for workout data",
+    contribution: "Developed a fitness tracking app using RapidAPI for exercise data specific to body parts, Material UI for styling, React functional components, and pagination for enhanced user experience with YouTube tutorial integration. Built backend services for workout logging and progress tracking.",
+    backend: ["RapidAPI exercise integration", "Workout tracking logic", "User authentication service", "Progress tracking APIs", "Exercise categorization by body part"],
+    frontend: ["React", "Material UI", "React Functional Components", "Pagination", "YouTube API"],
+    challenges: ["Fetching specific body part exercise data from RapidAPI", "Integrating YouTube tutorial videos for exercise demonstrations", "Implementing effective pagination for exercise lists", "Ensuring accurate workout tracking and progress visualization"],
+    stack: ["React", "RapidAPI", "Material UI", "YouTube API"],
+    live: "https://fitnesspluszone.netlify.app/",
+    github: "https://github.com/meghsha/React-Fitness-App",
+    architecture: {
+      nodes: [
+        { id: "user", label: "User", hint: "Fitness enthusiast tracking workouts" },
+        { id: "api", label: "RapidAPI", hint: "Fetching exercise data by body part" },
+        { id: "ui", label: "React UI", hint: "Material UI components with exercise display" },
+        { id: "yt", label: "YouTube Tutorials", hint: "Exercise demonstration videos" }
+      ],
+      edges: [
+        { from: "user", to: "ui" },
+        { from: "ui", to: "api" },
+        { from: "api", to: "api" }
+      ]
+    },
+    overview: "A comprehensive fitness application that provides exercise data filtered by body parts, accompanied by YouTube tutorials for proper form demonstration and tracking capabilities.",
+    problem: "Fitness enthusiasts needed an organized way to find exercises for specific body parts with reliable visual guidance for proper execution.",
+    role: "Full-stack developer implementing API integration, UI components, and fitness tracking features.",
+    impact: ["Integrated RapidAPI for specific body part exercise data", "Added YouTube tutorial integration for exercise guidance", "Implemented pagination for improved browsing experience", "Built backend services for workout logging"]
   },
   {
     slug: "codecorners-pm",
